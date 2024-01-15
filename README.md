@@ -22,6 +22,9 @@ public class Calculator {
     public static double sqrt(double num1) {
         return Math.sqrt(num1);
     }
+    public static double abs(double num1) {
+        return Math.abs(num1);
+    }
 }
 
 
