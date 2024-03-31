@@ -27,11 +27,11 @@ public class RegistrationGenerator {
         return registrationNumber.toString();
     }
 
-    private static long generateAndMeasureTime(int arraySize) {
+    private static String[] generateAndMeasureTime(int arraySize) {
   
 
         String[] registrationNumbers = new String[arraySize];
-          long startTime = System.currentTimeMillis();
+       
         
 
 
@@ -47,39 +47,132 @@ public class RegistrationGenerator {
         
         // Your operations using registrationNumbers go here
 
-        long elapsedTime = System.currentTimeMillis() - startTime;
+       
 
 
-        return elapsedTime;
+        return registrationNumbers ;
 
     }
 
     public static void main(String[] args) {
-        int[] arraySizes = {20000, 30000, 50000};
+        int arraySize = 10000;
 
-        for (int size : arraySizes) {
-            long timeTaken = generateAndMeasureTime(size);
-            System.out.println("Time taken for array size " + size + ": " + timeTaken + " milliseconds");
-        }
+            String[] a1 = RegistrationGenerator.generateAndMeasureTime(arraySize);
+            
+           
+            
+           
+           
+            int i=0;
+            long count1;
+            int noOfIterations = 13;
+            long[] timeTaken = new long[noOfIterations];
+            while(i<noOfIterations){
+            long startTime = System.nanoTime();
+            count1 = ap1(a1);
+           long  endTime = System.nanoTime();
+            timeTaken[i]=endTime - startTime;
+            i++;
+            }
+            double averageTime = RegistrationGenerator.average(timeTaken);
+            System.out.println("the average time required for approach1 is : " + averageTime + " nanoSeconds");            
+            i=0;
+            long count2;
+            while(i<noOfIterations){
+            long startTime = System.nanoTime();
+            count2 = ap2(a1);
+           long  endTime = System.nanoTime();
+            timeTaken[i]=endTime - startTime;
+            i++;
+            }
+            double averageTime1 = RegistrationGenerator.average(timeTaken);
+            System.out.println("the average time required for approach2 is : " + averageTime1 + " nanoSeconds");            
+            
+            i=0;
+            long count3;
+            while(i<noOfIterations){
+            long startTime = System.nanoTime();
+            count3 = ap3(a1);
+           long  endTime = System.nanoTime();
+            timeTaken[i]=endTime - startTime;
+            i++;
+            }
+            
+            double averageTime2 = RegistrationGenerator.average(timeTaken);
+            System.out.println("the average time required for approach3 is : " + averageTime2 + " nanoSeconds");            
+            
+            
+        
     }
+    
+    public static double average(long[] b){
+    double a =0;
+    	for(int i=0;i<b.length;i++){
+    	a+=b[i];
+    	}
+    	return (a/b.length);
+    	
+    }
+    
+    public static boolean checkByComparing(Integer a2){
+        if(a2.compareTo(051)==-1 && a2.compareTo(000)==1 ){
+        return true;
+        }
+      
+        return false;
+        }
+    
+    
+    public static long ap1(String[] registrationNumbers){
+    long count=0;
+      for(int i=0;i<registrationNumbers.length;i++){
+      
+       String a1 = registrationNumbers[i].substring(2,3);
+        int number = Integer.parseInt(a1);
+        	if(number >=1 && number <=50){
+        	count++;
+        	}
+  
+       
+        }
+        return count;	
+        }
+        
+        public static long ap2(String[] registrationNumbers){
+        long count =0;
+         for(int i=0;i<registrationNumbers.length;i++){
+        Character f1 = registrationNumbers[i].charAt(7);
+       Character f2 = registrationNumbers[i].charAt(8);
+       Character f3 = registrationNumbers[i].charAt(9);
+        	if(Character.isDigit(f1) & Character.isDigit(f1) & Character.isDigit(f1)){
+        		if((f1=='0' & f2>='0' & f2<='4')==true){
+        		count++;
+        		}
+        	       else if((f1=='0' & f2=='5' & f3=='0')){
+        		count++;
+        		}
+        		else{
+        		continue;
+        		}
+        		}
+        		
+        		}
+        		return count;
+        		}
+        		
+        public static long ap3(String[] registrationNumbers){
+        long count=0;
+        		
+        		for(int i=0;i<registrationNumbers.length;i++){
+        String a1 = registrationNumbers[i].substring(7,9);
+        Integer number = Integer.parseInt(a1);
+        	if(checkByComparing(number)==true){
+        	count++;
+
+        	
+        }	
+       
+       }
+       return count;
+       }
 }
-
-
-/*The StringBuilder class is a mutable sequence of characters in Java that can be used to build a string by incrementally appending or modifying the characters in the sequence.
-StringBuilder sb = new StringBuilder();
-
-sb.append("Hello, ");  append is also an alternative for '+' operator
-
-sb.append("world!");
-
-String s = sb.toString(); // "Hello, world!"
-In this example, we first create a new instance of the StringBuilder class with a default capacity of 16 characters. We then use the append method to add the strings "Hello, " and "world!" to the sequence of characters. Finally, we convert the StringBuilder object to a string using the toString method.
- --------------------------------------------------------------------------------------------------------
- random.nextInt(10) line in the Java code generates a random integer between 0 (inclusive) and 10 (exclusive), meaning that the generated integers are in the range [0, 10)
- random: This is a Random object that has been previously instantiated, as you have seen in the private static final Random random = new Random(); line.
- nextInt: This is a method of the Random class that generates a random integer within the specified range.
- 
- The line registrationNumbers.add(generateRegistrationNumber()); adds a new registration number to the registrationNumbers list, generated by the generateRegistrationNumber() method.(add is a methodin ArrayList class.)
- we use list whwn size of array is not sufficient.
- startTime variable is used to measure the elapsed time taken to generate and add registration numbers to the registrationNumbers list.
- elapsedTime variable is used to store the elapsed time after the loop that generates the registration numbers has completed.*/
