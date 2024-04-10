@@ -51,3 +51,22 @@ class InvalidVoter extends RuntimeException{
 	}
 }
 
+//in place of RuntimeException you write Exception
+//as Exception class contains unchecked exception it will check at compile it will give error when throws is not written 
+//on side of Method name on line number 21,6,41
+//if try and catch is used then exceptions will be handled inside check...(int age) method and there is no need to use throws
+//keyword anywhere 
+// error: checkVailidityOfVoter(int) in ECIndia cannot implement checkVailidityOfVoter(int) in EC
+
+
+//public void checkVailidityOfVoter(int age) throws InvalidVoter{ you Used Exception instead of RuntimeException
+//	            ^
+ // overridden method does not throw InvalidVoter
+ //this error comes when when throws is not used on line 6 but used on line no  21 and 41
+ 
+ 
+ //you are using RuntimeException and you didn't write throws keyword beside line number 21,41,6 then still the code will get 
+ //compiled 
+ 
+ 
+
