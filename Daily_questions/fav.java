@@ -39,7 +39,7 @@
 						College col = new College("Hello WRLD");
 						College colt = new College();
 						College coll = new College(52);
-						College.Department dept = col.new Department(90);
+						Department dept = col.new Department(90);
 						College.Department dep = col.new Department();
 						College.Department deptt = col.new Department("JShell");
 						System.out.println("number "+ dept.number + " " +" name " +col.name);

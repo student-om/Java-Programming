@@ -19,3 +19,10 @@ String str = "hello";
 	
 	}
 }
+
+/*  Method1 is in main block 
+You write try block in method (Method1) of a class 
+and you write catch block in main method 
+this  will give you an error;
+because you need to add catch block in the Method1 as the exception needs to be handled within class if try and catch are used
+ */

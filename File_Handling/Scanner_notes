@@ -1,0 +1,50 @@
+//Scanner class
+//for one character input :  char gender = sc.next().charAt(0);
+
+//	while (sc.hasNextInt()){} => until interger is present on input then go for while loop
+//eg 10(enter) (terminal view)
+//   23
+//   34
+//   23
+//   f(here while loop break) => you can also find sum of numbers by storing them in one variable
+
+//To create an object of Scanner class, we usually pass the predefined object System.in, which represents the standard input stream. We may pass an object of class File if we want to read input from a file.
+
+//BufferReader Methods:
+//photo added
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

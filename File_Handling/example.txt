@@ -1,0 +1,11 @@
+Hello, World!
+This is an example of FileWriter in java.(used in diff progarm)
+//-----------------------------------------------------------------------------
+
+This is input.txt;
+My Name is Om Guys 
+
+This is input.txt;
+My Name is Om Guys 
+
+//result of running program 2 times

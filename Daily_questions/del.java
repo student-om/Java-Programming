@@ -3,7 +3,7 @@
  College(String Collegename){
  this.Collegename = Collegename;
  }
- College(){    //invisible super() found this so no error generated(if no argument constructor were absent, then error would be generated)
+ College(){    //invisible super() found this so not error generated(if no argument constructor were absent, then error would be generated)
  this.Collegename = "randomname";
  }
  }

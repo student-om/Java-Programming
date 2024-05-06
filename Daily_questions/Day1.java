@@ -14,7 +14,7 @@ class Day1{
 	System.out.println("wrong index");
 	}
 	//2 ArrayIndexOutOfBoundsException ARE also not allowed
-	catch(InterruptedException e){  //this is a compile time exception i.e if you remove this catch exception comes at compile-time
+	catch(InterruptedException e){  //this is a compile time exception i.e if you remove this catch exception comes at compile-time(if there is also no Exception catch also)
 	System.out.println("InterruptedException found");
 	}
 	catch(Exception e) {
